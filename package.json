@@ -1,0 +1,32 @@
+{
+	"name": "ssdp",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://archive.eldergods.com/ssdp"
+	},
+	"keywords": [],
+	"author": "jauntywunderkind",
+	"license": "MIT",
+	"module": "ssdp.js",
+	"esm": true,
+	"@std/esm": {
+		"cjs": {
+			"namedExports": true
+		}
+	},
+	"dependencies": {
+		"async-iter-static": "^1.0.1",
+		"continua": "^1.0.0",
+		"deferrant": "^1.2.2",
+		"node-fetch": "^2.3.0"
+	},
+	"devDependencies": {
+		"esm": "^3.2.18"
+	},
+	"description": ""
+}
