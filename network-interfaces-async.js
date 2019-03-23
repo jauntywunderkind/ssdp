@@ -5,9 +5,12 @@ import { networkInterfaces } from "os"
 export async function *interfaces( getInterfaces= interfacesProducer, options){
 	return yield *Continua( getInterfaces, options)
 }
+export default interfaces
+// alias for interfaces export
+const _interfaces= interfaces
 
 /**
-* Emit every address found on the system
+* Emit every interface found right now.
 */
 export function * interfacesProducer( interfaces= networkInterfaces()){
 	for( const name of Object.keys( interfaces)){
@@ -18,12 +21,9 @@ export function * interfacesProducer( interfaces= networkInterfaces()){
 		}
 	}
 }
-export default interfaces
-// alias for interfaces export
-const _interfaces= interfaces
 
 /**
-* filter a set of addresses to only ipv4 matches
+* filter a set of interfaces to only ipv4 matches
 */
 export async function * ipv4( addresses= _interfaces()){
 	for await( const addr of addresses){
@@ -35,7 +35,7 @@ export async function * ipv4( addresses= _interfaces()){
 }
 
 /**
-* filter a set of addresses to only ipv6 matches
+* filter a set of interfaces to only ipv6 matches
 */
 export async function * ipv6( addresses= _interfaces()){
 	for await( const addr of addresses){
@@ -47,7 +47,7 @@ export async function * ipv6( addresses= _interfaces()){
 }
 
 /**
-* Pick off the address componenet from addresses
+* Pick off the address componenet from interfaces
 */
 export async function * addresses( interfaces= ipv4()){
 	for await( const addr of interfaces){
