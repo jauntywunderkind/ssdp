@@ -1,3 +1,4 @@
+"use module"
 import Continua from "continua"
 import { networkInterfaces } from "os"
 

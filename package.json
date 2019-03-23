@@ -10,16 +10,26 @@
 		"type": "git",
 		"url": "https://archive.eldergods.com/network-interfaces-async"
 	},
-	"keywords": ["network interfaces", "netif", "interfaces"],
+	"keywords": [
+		"network interfaces",
+		"netif",
+		"interfaces"
+	],
 	"author": "jauntywunderkind",
 	"license": "MIT",
 	"main": "network-interfaces-async.js",
 	"module": "network-interfaces-async.js",
 	"dependencies": {
+		"async-iter-static": "^1.0.1",
 		"continua": "^1.0.0"
 	},
+	"esm": {
+		"cjs": {
+			"vars": true
+		}
+	},
 	"devDependencies": {
-		"esm": "^3.2.18"
+		"esm": "^3.2.20"
 	},
 	"description": "Streaming alternative to os.networkInterfaces()"
 }
